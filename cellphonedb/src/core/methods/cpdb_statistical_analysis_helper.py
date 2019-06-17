@@ -452,8 +452,6 @@ def cluster_interaction_mean(cluster_interaction: tuple, interaction: pd.Series,
     if mean_receptor == 0 or mean_ligand == 0:
         interaction_mean = 0
     else:
-        # interaction_mean = (mean_receptor + mean_ligand) / 2
-        # interaction_mean = 2*(mean_receptor*mean_ligand) / (mean_receptor + mean_ligand)
-        interaction_mean = (mean_receptor*mean_ligand)**(1/float(2))
+        interaction_mean = 2*(mean_receptor*mean_ligand) / (mean_receptor + mean_ligand)
 
     return interaction_mean
